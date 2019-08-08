@@ -7,15 +7,15 @@ $(document).ready(function () {
     ];
 
 
-    function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
+    function createButtons(array, classAdded, area) {
         $(areaToAddTo).empty();
 
-        for (var i = 0; i < arrayToUse.length; i++) {
+        for (var i = 0; i < array.length; i++) {
             var a = $("<button>");
-            a.addClass(classToAdd);
-            a.attr("data-type", arrayToUse[i]);
-            a.text(arrayToUse[i]);
-            $(areaToAddTo).append(a);
+            a.addClass(classAdded);
+            a.attr("data-type", array[i]);
+            a.text(array[i]);
+            $(area).append(a);
         }
 
     }
@@ -85,9 +85,9 @@ $(document).ready(function () {
             animals.push(newAnimal);
         }
 
-        populateButtons(animals, "animal-button", "#animal-buttons");
+        createButtons(animals, "animal-button", "#animal-buttons");
 
     });
 
-    populateButtons(animals, "animal-button", "#animal-buttons");
+    createButtons(animals, "animal-button", "#animal-buttons");
 });
